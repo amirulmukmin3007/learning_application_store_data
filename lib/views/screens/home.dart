@@ -3,6 +3,7 @@ import 'package:learning_application_store_data/models/task_models.dart';
 import 'package:learning_application_store_data/utils/components/custom_appbar.dart';
 import 'package:learning_application_store_data/utils/components/custom_listtile.dart';
 import 'package:learning_application_store_data/utils/state_management/tasklist_provider.dart';
+import 'package:learning_application_store_data/utils/state_management/userdata_provider.dart';
 import 'package:learning_application_store_data/views/pages/show_all_tasks.dart';
 import 'package:provider/provider.dart';
 
@@ -46,6 +47,7 @@ class _HomeState extends State<Home> {
 
     // get user id
     userId = result['user_id'];
+    Provider.of<UserDataProvider>(context, listen: false).setUserId(userId);
 
     // get status
     status = result['success'];
@@ -139,7 +141,6 @@ class _HomeState extends State<Home> {
                                 Tab(text: 'Missed'),
                               ],
                             ),
-
                             Expanded(
                               child: TabBarView(
                                 children: [

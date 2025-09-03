@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learning_application_store_data/utils/state_management/tasklist_provider.dart';
+import 'package:learning_application_store_data/utils/state_management/userdata_provider.dart';
 import 'package:learning_application_store_data/views/screens/main_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -7,6 +8,9 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider<UserDataProvider>(
+          create: (_) => UserDataProvider(),
+        ),
         ChangeNotifierProvider<TaskListProvider>(
           create: (_) => TaskListProvider(),
         ),

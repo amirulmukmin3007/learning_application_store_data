@@ -23,5 +23,7 @@ class Api {
   static const getTaskDataMatthew = baseUrl + 'api/tasks/matthew';
 
   static const postFormApplication = baseUrl + 'api/form/submit-application';
+  static const postFormCreateTask =
+      baseUrl + 'api/form/submit-form-create-task';
   static const getFormApplication = baseUrl + 'api/form/get-application';
 }
